@@ -1,0 +1,9 @@
+{
+  "name": "shair-landing",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Shair landing page + Netlify functions",
+  "dependencies": {
+    "firebase-admin": "^12.0.0"
+  }
+}

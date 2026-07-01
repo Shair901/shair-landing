@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shair — Want to Find Out More?</title>
+
+  <!-- ═══════════════════════════════════════════════════════
+       META PIXEL
+       Replace YOUR_PIXEL_ID with your actual Pixel ID
+       ═══════════════════════════════════════════════════════ -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel -->
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #f5f0e8;
+      --bg: #f5f5f0;
+      --dark: #2c1810;
+      --mid: #6b5a52;
+      --gold: #c4a882;
+      --form-bg: #ede8e0;
+      --input-bg: #ffffff;
+      --border: #d4cdc4;
+      --btn: #3d2b20;
+      --tick: #5a7a5a;
+      --r: 4px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--dark);
+      font-family: Georgia, 'Times New Roman', serif;
+      min-height: 100vh;
+    }
+
+    /* ── Layout ── */
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* ── Left copy ── */
+    .eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: clamp(40px, 5vw, 64px);
+      font-weight: 900;
+      line-height: 1.0;
+      text-transform: uppercase;
+      color: var(--dark);
+      margin-bottom: 28px;
+      letter-spacing: -0.02em;
+    }
+
+    .intro {
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--mid);
+      margin-bottom: 36px;
+      max-width: 440px;
+    }
+
+    .checklist {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      line-height: 1.5;
+      color: var(--dark);
+    }
+
+    .checklist li::before {
+      content: '';
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpolyline points='3,9 7,13 15,5' fill='none' stroke='%235a7a5a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    /* ── Form card ── */
+    .form-card {
+      background: var(--form-bg);
+      border-radius: var(--r);
+      padding: 40px 36px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      display: block;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    .form-label .sublabel {
+      font-size: 10px;
+      font-weight: 400;
+      color: var(--mid);
+      letter-spacing: 0.05em;
+      text-transform: none;
+      margin-left: 4px;
+    }
+
+    .form-input {
+      width: 100%;
+      background: var(--input-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 13px 14px;
+      font-family: Georgia, serif;
+      font-size: 15px;
+      color: var(--dark);
+      outline: none;
+      transition: border-color 0.15s;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    .form-input:focus {
+      border-color: var(--btn);
+    }
+
+    .form-input::placeholder {
+      color: #bbb;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    select.form-input {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%236b5a52' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+      cursor: pointer;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 16px;
+      background: var(--btn);
+      color: var(--cream);
+      border: none;
+      border-radius: var(--r);
+      font-family: Georgia, serif;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: opacity 0.15s;
+    }
+
+    .submit-btn:hover { opacity: 0.88; }
+    .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    .form-disclaimer {
+      margin-top: 16px;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      color: var(--mid);
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    /* ── States ── */
+    #form-error {
+      display: none;
+      background: #fff0f0;
+      border: 1px solid #ffc0c0;
+      border-radius: var(--r);
+      padding: 12px 14px;
+      font-size: 13px;
+      color: #c0392b;
+      margin-bottom: 16px;
+    }
+
+    #form-success {
+      display: none;
+      text-align: center;
+      padding: 32px 0;
+    }
+
+    #form-success .success-icon {
+      font-size: 40px;
+      margin-bottom: 16px;
+    }
+
+    #form-success h3 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--dark);
+    }
+
+    #form-success p {
+      font-size: 15px;
+      color: var(--mid);
+      line-height: 1.7;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 780px) {
+      .page {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        padding: 48px 24px;
+        min-height: auto;
+      }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ── Left: Copy ── -->
+  <div class="copy">
+    <p class="eyebrow">See if your salon qualifies</p>
+    <h1>Want to Find Out More?</h1>
+    <p class="intro">
+      We partner with a small number of independent hair salons with teams of 5 or more.
+      Leave your details, we'll send you the Shair handbook, and we'll come back to you
+      personally to find a time to talk.
+    </p>
+    <ul class="checklist">
+      <li>The Shair handbook, sent straight to your inbox.</li>
+      <li>We'll text you the link too, so it's easy to find.</li>
+      <li>A personal call to find a time to talk. No hard sell.</li>
+    </ul>
+  </div>
+
+  <!-- ── Right: Form ── -->
+  <div class="form-card">
+
+    <div id="form-error"></div>
+
+    <!-- Success state (shown after submission) -->
+    <div id="form-success">
+      <div class="success-icon">✓</div>
+      <h3>On its way.</h3>
+      <p>
+        The handbook is heading to your inbox now.<br>
+        We'll be in touch personally within 24 hours.
+      </p>
+    </div>
+
+    <!-- The form -->
+    <form id="shair-form" novalidate>
+
+      <div class="form-group">
+        <label class="form-label" for="f-owner">Name</label>
+        <input class="form-input" id="f-owner" name="owner" type="text" placeholder="Sarah Jones" autocomplete="name">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="f-name">Salon Name</label>
+        <input class="form-input" id="f-name" name="name" type="text" placeholder="The Hair Studio" autocomplete="organization">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="f-email">Email</label>
+        <input class="form-input" id="f-email" name="email" type="email" placeholder="sarah@thehair.studio" autocomplete="email">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="f-phone">
+          Best Mobile
+          <span class="sublabel">(we'll text you the handbook link too)</span>
+        </label>
+        <input class="form-input" id="f-phone" name="phone" type="tel" placeholder="07700 900000" autocomplete="tel">
+      </div>
+
+      <div class="form-group form-row">
+        <div>
+          <label class="form-label" for="f-team">Team Size</label>
+          <select class="form-input" id="f-team" name="teamCount">
+            <option value="" disabled selected>Select</option>
+            <option value="5-9">5 – 9</option>
+            <option value="10-19">10 – 19</option>
+            <option value="20+">20+</option>
+          </select>
+        </div>
+        <div>
+          <label class="form-label" for="f-turnover">Annual Turnover</label>
+          <select class="form-input" id="f-turnover" name="annualTurnover">
+            <option value="" disabled selected>Select</option>
+            <option value="Under £250k">Under £250k</option>
+            <option value="£250k – £500k">£250k – £500k</option>
+            <option value="£500k – £1m">£500k – £1m</option>
+            <option value="Over £1m">Over £1m</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Hidden UTM fields — populated by JS on page load -->
+      <input type="hidden" id="f-utm-source"   name="utm_source">
+      <input type="hidden" id="f-utm-medium"   name="utm_medium">
+      <input type="hidden" id="f-utm-campaign" name="utm_campaign">
+      <input type="hidden" id="f-utm-content"  name="utm_content">
+
+      <!-- Hidden event ID for Meta CAPI deduplication -->
+      <input type="hidden" id="f-event-id" name="eventId">
+
+      <button class="submit-btn" type="submit" id="submit-btn">
+        See if my salon qualifies &nbsp;→
+      </button>
+
+      <p class="form-disclaimer">
+        Your details go straight to the Shair team. We'll only use them to send you your
+        handbook and arrange a chat.
+      </p>
+
+    </form>
+  </div>
+
+</div>
+
+<script>
+  // ── 1. Capture UTMs from URL and populate hidden fields ───────────────────
+  (function captureUTMs() {
+    const params = new URLSearchParams(window.location.search);
+    const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'];
+    utmKeys.forEach(key => {
+      const val = params.get(key);
+      if (val) {
+        const el = document.getElementById('f-' + key.replace('_', '-'));
+        if (el) el.value = val;
+        // Also persist to sessionStorage so UTMs survive navigation
+        sessionStorage.setItem(key, val);
+      } else {
+        // Fall back to sessionStorage if UTM was set on a previous page
+        const stored = sessionStorage.getItem(key);
+        const el = document.getElementById('f-' + key.replace('_', '-'));
+        if (stored && el) el.value = stored;
+      }
+    });
+  })();
+
+  // ── 2. Generate unique event ID for CAPI deduplication ───────────────────
+  (function setEventId() {
+    const id = 'lead_' + Date.now() + '_' + Math.random().toString(36).slice(2, 9);
+    document.getElementById('f-event-id').value = id;
+    // Store so we can pass the same ID to the browser-side Lead event on submit
+    window._shairEventId = id;
+  })();
+
+  // ── 3. Form submission ────────────────────────────────────────────────────
+  document.getElementById('shair-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const btn     = document.getElementById('submit-btn');
+    const errEl   = document.getElementById('form-error');
+    const form    = document.getElementById('shair-form');
+    const success = document.getElementById('form-success');
+
+    // Client-side validation
+    const owner  = document.getElementById('f-owner').value.trim();
+    const name   = document.getElementById('f-name').value.trim();
+    const email  = document.getElementById('f-email').value.trim();
+    const phone  = document.getElementById('f-phone').value.trim();
+
+    if (!name || !email) {
+      errEl.textContent = 'Please fill in your salon name and email.';
+      errEl.style.display = 'block';
+      return;
+    }
+
+    errEl.style.display = 'none';
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    // ── Fire browser-side Meta Lead event (CAPI dedup partner) ───────────
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'Lead', {}, { eventID: window._shairEventId });
+    }
+
+    // ── Build payload ─────────────────────────────────────────────────────
+    const payload = {
+      owner,
+      name,
+      email,
+      phone,
+      teamCount:      document.getElementById('f-team').value,
+      annualTurnover: document.getElementById('f-turnover').value,
+      eventId:        window._shairEventId,
+      sourceUrl:      window.location.href,
+      utm_source:     document.getElementById('f-utm-source').value,
+      utm_medium:     document.getElementById('f-utm-medium').value,
+      utm_campaign:   document.getElementById('f-utm-campaign').value,
+      utm_content:    document.getElementById('f-utm-content').value,
+    };
+
+    try {
+      const res = await fetch('/.netlify/functions/submit-lead', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify(payload),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok || !data.success) {
+        throw new Error(data.error || 'Submission failed');
+      }
+
+      // ── Show success state ────────────────────────────────────────────
+      form.style.display    = 'none';
+      success.style.display = 'block';
+
+    } catch (err) {
+      console.error('Submission error:', err);
+      errEl.textContent    = 'Something went wrong — please try again or email dominic@shairgroup.com.';
+      errEl.style.display  = 'block';
+      btn.disabled         = false;
+      btn.innerHTML        = 'See if my salon qualifies &nbsp;→';
+    }
+  });
+</script>
+
+</body>
+</html>
